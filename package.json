@@ -1,0 +1,40 @@
+{
+  "name": "base-fs-process",
+  "description": "Plugin for processing files from a declarative configuration.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/node-base/base-fs-process",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "node-base/base-fs-process",
+  "bugs": {
+    "url": "https://github.com/node-base/base-fs-process/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp-format-md": "*",
+    "mocha": "^2.4.5"
+  },
+  "keywords": [],
+  "verb": {
+    "layout": "default",
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "related": {
+      "list": []
+    },
+    "reflinks": [
+      "verb"
+    ]
+  }
+}
