@@ -1,5 +1,5 @@
 /*!
- * base-fs-process (https://github.com/node-base/base-fs-process)
+ * base-files-process (https://github.com/node-base/base-files-process)
  *
  * Copyright (c) 2016, Jon Schlinkert.
  * Licensed under the MIT License.
@@ -8,18 +8,18 @@
 'use strict';
 
 var path = require('path');
-var debug = require('debug')('base-fs-process');
+var debug = require('debug')('base-files-process');
 var extend = require('extend-shallow');
 var cwd = require('base-cwd');
 
 module.exports = function(config) {
   return function(app) {
-    if (!this.isApp || this.isRegistered('base-fs-process')) return;
+    if (!this.isApp || this.isRegistered('base-files-process')) return;
     debug('initializing "%s", from "%s"', __filename, module.parent.id);
     app.use(cwd());
 
     this.define('process', function(files, options) {
-      debug('running base-fs-process', files);
+      debug('running base-files-process', files);
 
       if (typeof this.plugin !== 'function') {
         throw new Error('expected the base-pipeline plugin to be registered');

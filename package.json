@@ -1,12 +1,12 @@
 {
-  "name": "base-fs-process",
+  "name": "base-files-process",
   "description": "Plugin for processing files from a declarative configuration.",
   "version": "0.1.0",
-  "homepage": "https://github.com/node-base/base-fs-process",
+  "homepage": "https://github.com/node-base/base-files-process",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
-  "repository": "node-base/base-fs-process",
+  "repository": "node-base/base-files-process",
   "bugs": {
-    "url": "https://github.com/node-base/base-fs-process/issues"
+    "url": "https://github.com/node-base/base-files-process/issues"
   },
   "license": "MIT",
   "files": [
@@ -35,7 +35,15 @@
     "rimraf": "^2.5.2",
     "through2": "^2.0.1"
   },
-  "keywords": [],
+  "keywords": [
+    "base",
+    "baseplugin",
+    "config",
+    "declarative",
+    "files",
+    "fs",
+    "pipeline"
+  ],
   "verb": {
     "toc": false,
     "layout": "default",

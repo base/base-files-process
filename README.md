@@ -1,4 +1,4 @@
-# base-fs-process [![NPM version](https://img.shields.io/npm/v/base-fs-process.svg?style=flat)](https://www.npmjs.com/package/base-fs-process) [![NPM downloads](https://img.shields.io/npm/dm/base-fs-process.svg?style=flat)](https://npmjs.org/package/base-fs-process) [![Build Status](https://img.shields.io/travis/node-base/base-fs-process.svg?style=flat)](https://travis-ci.org/node-base/base-fs-process)
+# base-files-process [![NPM version](https://img.shields.io/npm/v/base-files-process.svg?style=flat)](https://www.npmjs.com/package/base-files-process) [![NPM downloads](https://img.shields.io/npm/dm/base-files-process.svg?style=flat)](https://npmjs.org/package/base-files-process) [![Build Status](https://img.shields.io/travis/node-base/base-files-process.svg?style=flat)](https://travis-ci.org/node-base/base-files-process)
 
 Plugin for processing files from a declarative configuration.
 
@@ -7,13 +7,13 @@ Plugin for processing files from a declarative configuration.
 Install with [npm](https://www.npmjs.com/):
 
 ```sh
-$ npm install base-fs-process --save
+$ npm install base-files-process --save
 ```
 
 ## Usage
 
 ```js
-var bfsp = require('base-fs-process');
+var files = require('base-files-process');
 ```
 
 ## Example
@@ -22,13 +22,13 @@ var bfsp = require('base-fs-process');
 var expand = require('expand-files');
 var Base = require('base');
 var pipeline = require('base-pipeline');
-var bfsp = require('base-fs-process');
-var bfs = require('base-fs');
+var files = require('base-files-process');
+var vfs = require('base-fs');
 var app = new Base();
 
 app.use(pipeline());
-app.use(bfsp());
-app.use(bfs());
+app.use(files());
+app.use(vfs());
 
 // register pipeline plugins using the `.plugin` method
 app.plugin('foo', function(options) {
@@ -63,7 +63,7 @@ You might also be interested in these projects:
 
 ## Contributing
 
-Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/node-base/base-fs-process/issues/new).
+Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/node-base/base-files-process/issues/new).
 
 ## Building docs
 
@@ -97,7 +97,7 @@ $ npm install -d && npm test
 ## License
 
 Copyright © 2016, [Jon Schlinkert](https://github.com/jonschlinkert).
-Released under the [MIT license](https://github.com/node-base/base-fs-process/blob/master/LICENSE).
+Released under the [MIT license](https://github.com/node-base/base-files-process/blob/master/LICENSE).
 
 ***
 
