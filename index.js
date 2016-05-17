@@ -9,26 +9,21 @@
 
 var path = require('path');
 var debug = require('debug')('base-files-process');
-var extend = require('extend-shallow');
-var cwd = require('base-cwd');
+var utils = require('./utils');
 
 module.exports = function(config) {
   return function(app) {
-    if (!this.isApp || this.isRegistered('base-files-process')) return;
+    if (!isValid(this)) return;
     debug('initializing "%s", from "%s"', __filename, module.parent.id);
-    app.use(cwd());
+
+    this.use(utils.cwd());
+    this.use(utils.vfs());
+    this.use(utils.pipeline());
 
     this.define('process', function(files, options) {
       debug('running base-files-process', files);
 
-      if (typeof this.plugin !== 'function') {
-        throw new Error('expected the base-pipeline plugin to be registered');
-      }
-      if (typeof this.src !== 'function') {
-        throw new Error('expected the base-fs plugin to be registered');
-      }
-
-      var opts = extend({}, config, this.options, files.options, options);
+      var opts = utils.extend({}, config, this.options, files.options, options);
       files.dest = path.resolve(app.cwd, files.dest);
 
       return this.src(files.src, opts)
@@ -38,3 +33,13 @@ module.exports = function(config) {
     });
   };
 };
+
+function isValid(app) {
+  if (!utils.isValidInstance(app, ['app', 'views', 'collection'])) {
+    return false;
+  }
+  if (utils.isRegistered(app, 'base-files-process')) {
+    return false;
+  }
+  return true;
+}
