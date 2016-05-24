@@ -1,7 +1,7 @@
 {
   "name": "base-files-process",
   "description": "Plugin for processing files from a declarative configuration.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/node-base/base-files-process",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "node-base/base-files-process",
@@ -21,9 +21,9 @@
     "test": "mocha"
   },
   "dependencies": {
-    "base-cwd": "^0.1.6",
+    "base-cwd": "^0.2.0",
     "base-fs": "^0.3.3",
-    "base-pipeline": "^0.2.5",
+    "base-pipeline": "^0.3.0",
     "debug": "^2.2.0",
     "is-registered": "^0.1.4",
     "is-valid-instance": "^0.1.0",
