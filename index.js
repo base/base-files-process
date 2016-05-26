@@ -17,8 +17,12 @@ module.exports = function(config) {
     debug('initializing "%s", from "%s"', __filename, module.parent.id);
 
     this.use(utils.cwd());
-    this.use(utils.vfs());
     this.use(utils.pipeline());
+
+    // if templates need to be rendered, register assemble-fs before this plugin
+    if (typeof this.src !== 'function') {
+      this.use(utils.vfs());
+    }
 
     this.define('process', function(files, options) {
       debug('running base-files-process', files);
