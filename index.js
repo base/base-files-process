@@ -26,13 +26,26 @@ module.exports = function (config) {
     /**
      * Process an array of `files` objects, where each object has a `src` and `dest` property.
      *
+     * ```js
+     * var expand = require('expand-files');
+     * var config = expand({
+     *   cwd: fixtures,
+     *   src: 'b.txt',
+     *   dest: actual
+     * });
+     *
+     * app.processFiles(config)
+     *   .on('error', console.log)
+     *   .on('end', console.log);
+     * ```
+     * @name .processFiles
      * @param {Array} `files`
      * @param {Object} `options`
-     * @return {Object}
+     * @return {Stream}
      * @api public
      */
 
-    this.define('process', function (files, options) {
+    this.define('processFiles', function (files, options) {
       debug('running base-files-process', files);
 
       var opts = utils.extend({}, config, this.options, files.options, options);

@@ -72,7 +72,7 @@ describe('process plugins', function() {
         dest: actual
       });
 
-      app.process(config, {suffix: 'zzz'})
+      app.processFiles(config, {suffix: 'zzz'})
         .on('error', cb)
         .on('data', function(data) {
           var str = data.contents.toString();
@@ -104,7 +104,7 @@ describe('process plugins', function() {
         dest: actual
       });
 
-      app.process(config, {suffix: 'zzz'})
+      app.processFiles(config, {suffix: 'zzz'})
         .on('error', cb)
         .on('data', function(data) {
           var str = data.contents.toString();
@@ -136,7 +136,7 @@ describe('process plugins', function() {
         dest: actual
       });
 
-      app.process(config, {pipeline: ['a', 'c'], suffix: 'zzz'})
+      app.processFiles(config, {pipeline: ['a', 'c'], suffix: 'zzz'})
         .on('error', cb)
         .on('data', function(data) {
           var str = data.contents.toString();
@@ -178,7 +178,7 @@ describe('process()', function() {
     it('should process files from the process options.cwd', function(cb) {
       config = expand({src: 'b.txt', dest: actual, cwd: fixtures});
 
-      app.process(config, {cwd: fixtures})
+      app.processFiles(config, {cwd: fixtures})
         .on('error', cb)
         .on('end', function() {
           assert(exists('b.txt'));
@@ -195,7 +195,7 @@ describe('process()', function() {
         dest: actual
       });
 
-      app.process(config)
+      app.processFiles(config)
         .on('error', cb)
         .on('end', function() {
           assert(exists('b.txt'));
@@ -205,7 +205,7 @@ describe('process()', function() {
 
     it('should work with no options:', function(cb) {
       config = expand({src: 'b.txt', dest: actual, cwd: fixtures});
-      app.process(config)
+      app.processFiles(config)
         .on('error', cb)
         .on('end', function() {
           assert(exists('b.txt'));
@@ -222,7 +222,7 @@ describe('process()', function() {
         dest: actual
       });
 
-      app.process(config)
+      app.processFiles(config)
         .on('error', cb)
         .on('end', function() {
           assert(exists('a.txt'));
@@ -241,7 +241,7 @@ describe('process()', function() {
         dest: actual
       });
 
-      app.process(config)
+      app.processFiles(config)
         .on('error', cb)
         .on('end', function() {
           assert(exists('a.txt'));
