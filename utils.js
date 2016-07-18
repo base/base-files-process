@@ -12,8 +12,7 @@ require('base-cwd', 'cwd');
 require('base-fs', 'vfs');
 require('base-pipeline', 'pipeline');
 require('extend-shallow', 'extend');
-require('is-registered');
-require('is-valid-instance');
+require('is-valid-app', 'isValid');
 require = fn;
 
 /**
